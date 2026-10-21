@@ -4,23 +4,28 @@
    ========================================================================== */
 
 :root {
-  --color-primary: #17365a;
-  --color-primary-dark: #10243e;
-  --color-secondary: #0066b3;
-  --color-secondary-light: #e6f0fa;
+  --color-primary: #005ca9;
+  --color-primary-dark: #00447c;
+  --color-primary-deep: #0a2540;
+  --color-secondary: #0070cc;
+  --color-secondary-light: #eaf3fa;
   --color-accent: #0284c7;
   
+  --color-tricolore-green: #2e9e28;
+  --color-tricolore-white: #ffffff;
+  --color-tricolore-red: #d91b24;
+  
   --color-bg-white: #ffffff;
-  --color-bg-slate-50: #f8fafc;
-  --color-bg-slate-100: #f1f5f9;
+  --color-bg-slate-50: #f4f8fc;
+  --color-bg-slate-100: #eaf1f8;
   
-  --color-border: #e2e8f0;
-  --color-border-hover: #cbd5e1;
+  --color-border: #dbe7f3;
+  --color-border-hover: #b8d2eb;
   
-  --color-text-main: #0f172a;
-  --color-text-body: #334155;
-  --color-text-muted: #64748b;
-  --color-text-light: #94a3b8;
+  --color-text-main: #0a2540;
+  --color-text-body: #2c425c;
+  --color-text-muted: #57708c;
+  --color-text-light: #8fa3b8;
   
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --container-max: 1240px;
@@ -28,9 +33,9 @@
   --radius-md: 6px;
   --radius-lg: 8px;
   
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-xs: 0 1px 2px rgba(10, 37, 64, 0.05);
+  --shadow-sm: 0 2px 6px rgba(0, 92, 169, 0.08), 0 1px 2px rgba(10, 37, 64, 0.04);
+  --shadow-md: 0 8px 18px -2px rgba(0, 92, 169, 0.12), 0 4px 8px -1px rgba(10, 37, 64, 0.05);
 }
 
 *, *::before, *::after {
@@ -82,31 +87,36 @@ ul {
    TOP UTILITY BAR
    ========================================================================== */
 .top-bar {
-  background-color: var(--color-bg-slate-100);
-  border-bottom: 1px solid var(--color-border);
+  background-color: #07192b;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #009246 0%, #ffffff 25%, #ce2b37 50%, #005ca9 75%, #0070cc 100%) 1;
   font-size: 13px;
-  color: var(--color-text-muted);
-  padding: 7px 0;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 0;
 }
 
 .top-bar-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.top-bar-left, .top-bar-right {
+.top-bar-left {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .top-bar-sep {
-  color: #cbd5e1;
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .top-bar strong {
-  color: var(--color-text-main);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .top-bar-link {
@@ -196,22 +206,32 @@ ul {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-text-main);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
 }
 
 .header-phone:hover {
-  color: var(--color-secondary);
+  color: var(--color-primary);
+  background: rgba(0, 92, 169, 0.05);
 }
 
 .header-phone-icon {
   width: 28px;
   height: 28px;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-slate-100);
-  border: 1px solid var(--color-border);
+  background: rgba(0, 92, 169, 0.08);
+  border: 1px solid rgba(0, 92, 169, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
+  transition: all 0.2s ease;
+}
+
+.header-phone:hover .header-phone-icon {
+  background: var(--color-primary);
+  color: #ffffff;
 }
 
 .header-phone-icon svg {
@@ -233,28 +253,35 @@ ul {
   border-radius: var(--radius-md);
   cursor: pointer;
   border: 1px solid transparent;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   line-height: 1.4;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, #005ca9 0%, #0070cc 100%);
   color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 92, 169, 0.28);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-dark);
+  background: linear-gradient(135deg, #00447c 0%, #005ca9 100%);
+  box-shadow: 0 6px 20px rgba(0, 92, 169, 0.42);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
   background-color: var(--color-bg-white);
-  color: var(--color-text-main);
-  border-color: var(--color-border-hover);
+  color: var(--color-primary);
+  border: 1.5px solid rgba(0, 92, 169, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 92, 169, 0.05);
 }
 
 .btn-secondary:hover {
-  border-color: #94a3b8;
-  background-color: var(--color-bg-slate-50);
+  border-color: var(--color-primary);
+  background-color: rgba(0, 92, 169, 0.04);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 92, 169, 0.12);
 }
 
 .btn-white {
@@ -380,8 +407,8 @@ ul {
    PAGE HERO / SUBHEADER
    ========================================================================== */
 .hero-section {
-  background-color: var(--color-bg-white);
-  border-bottom: 1px solid var(--color-border);
+  background: radial-gradient(1100px 500px at 70% 25%, rgba(0, 92, 169, 0.08), transparent 75%), linear-gradient(180deg, #edf5fc 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(0, 92, 169, 0.12);
   padding: 56px 0 64px 0;
 }
 
@@ -394,10 +421,10 @@ ul {
 
 .eyebrow {
   font-size: 13px;
-  font-weight: 600;
-  color: var(--color-secondary);
+  font-weight: 700;
+  color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   margin-bottom: 12px;
 }
 
@@ -428,23 +455,39 @@ ul {
 .hero-highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-border);
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 92, 169, 0.12);
   font-size: 13px;
-  color: var(--color-text-body);
+  color: var(--color-text-main);
 }
 
 .highlight-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 92, 169, 0.14);
+  box-shadow: 0 2px 6px rgba(0, 92, 169, 0.05);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.highlight-item:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 92, 169, 0.12);
 }
 
 .highlight-icon {
-  width: 16px;
-  height: 16px;
-  color: var(--color-secondary);
+  width: 26px;
+  height: 26px;
+  color: var(--color-primary);
+  background: rgba(0, 92, 169, 0.08);
+  padding: 4px;
+  border-radius: 6px;
   flex-shrink: 0;
 }
 
@@ -489,6 +532,23 @@ ul {
   font-size: 13px;
   font-weight: 700;
   color: var(--color-text-main);
+}
+
+@media (max-width: 520px) {
+  .hero-image-caption {
+    padding: 12px 14px !important;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  .hero-image-caption > div {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .hero-image-caption > div > div {
+    text-align: left !important;
+  }
 }
 
 /* ==========================================================================
@@ -630,6 +690,18 @@ ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+}
+
+.cards-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .card {
@@ -829,6 +901,11 @@ ul {
 .dest-card[data-country="spagna"]::before,
 .dest-card#spagna::before {
   background-image: url('../images/flags/spagna.svg');
+}
+
+.dest-card[data-country="romania"]::before,
+.dest-card#romania::before {
+  background-image: url('../images/flags/romania.svg');
 }
 
 .dest-card-inner {
@@ -1230,7 +1307,8 @@ ul {
    ========================================================================== */
 .site-footer {
   background-color: var(--color-bg-slate-50);
-  border-top: 1px solid var(--color-border);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, #009246 0%, #ffffff 25%, #ce2b37 50%, #005ca9 75%, #0070cc 100%) 1;
   padding: 56px 0 36px 0;
   font-size: 14px;
   color: var(--color-text-body);
@@ -1334,7 +1412,7 @@ ul {
     height: 340px;
   }
   
-  .cards-grid-4 {
+  .cards-grid-4, .cards-grid-5 {
     grid-template-columns: repeat(2, 1fr);
   }
   
@@ -1366,7 +1444,7 @@ ul {
     gap: 10px;
   }
   
-  .cards-grid-3, .cards-grid-2, .cards-grid-4, .contact-primary-grid, .info-guide-grid {
+  .cards-grid-3, .cards-grid-2, .cards-grid-4, .cards-grid-5, .contact-primary-grid, .info-guide-grid {
     grid-template-columns: 1fr;
   }
   
@@ -1457,9 +1535,441 @@ ul {
   transform: translateY(0) scale(1);
 }
 
+/* ==========================================================================
+   TRICOLORE ITALIA -> EUROPA & COLORFUL CORPORATE ENHANCEMENTS
+   ========================================================================== */
+
+/* Tricolore Banner Pill above Hero */
+.hero-tricolore-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(234, 243, 250, 0.95));
+  border: 1px solid rgba(0, 92, 169, 0.18);
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px -2px rgba(0, 92, 169, 0.12);
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.tricolore-flag-mini {
+  display: inline-flex;
+  width: 22px;
+  height: 15px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.tricolore-flag-mini .band-green {
+  width: 33.33%;
+  height: 100%;
+  background-color: #009246;
+}
+
+.tricolore-flag-mini .band-white {
+  width: 33.34%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.tricolore-flag-mini .band-red {
+  width: 33.33%;
+  height: 100%;
+  background-color: #ce2b37;
+}
+
+.tricolore-text-styled {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tricolore-italy {
+  color: #009246;
+  text-shadow: 0 1px 1px rgba(0, 146, 70, 0.15);
+}
+
+.tricolore-arrow {
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.tricolore-europe {
+  color: #005ca9;
+  text-shadow: 0 1px 1px rgba(0, 92, 169, 0.15);
+}
+
+.hero-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-xs);
+}
+
+.hero-logo-badge img {
+  height: 22px;
+  width: auto;
+}
+
+.hero-logo-badge span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dual Header Phones */
+.header-phones-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-phone-hub {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.header-phone-hub .hub-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-primary);
+}
+
+.header-phone-hub .hub-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.header-phone-hub:hover .hub-num {
+  color: var(--color-primary);
+}
+
+/* Enhanced Visual Freshness for Cards */
+.card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Site Header Brand Accent Bar */
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #009246 0%, #ffffff 20%, #ce2b37 35%, #005ca9 50%, #0070cc 100%);
+  z-index: 101;
+}
+
 .back-to-top svg {
   width: 18px;
   height: 18px;
+}
+
+/* ==========================================================================
+   HERO BRAND CARD: "FROM ITALY -> TO EUROPE" WITH FLAGS + OFFICIAL LOGO
+   ========================================================================== */
+.hero-brand-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 34px 28px;
+  background: linear-gradient(165deg, #ffffff 0%, #f4f8fd 55%, #e6f1fb 100%);
+  border: 1.5px solid rgba(0, 92, 169, 0.22);
+  box-shadow: 0 24px 50px -12px rgba(0, 92, 169, 0.18), 0 0 0 1px rgba(0, 112, 204, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-brand-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 60px -15px rgba(0, 92, 169, 0.24), 0 0 0 1px rgba(0, 112, 204, 0.3);
+  border-color: rgba(0, 92, 169, 0.38);
+}
+
+/* Brand Speed-stripe Top Accent */
+.hero-brand-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #009246 0%, #ffffff 25%, #ce2b37 50%, #005ca9 75%, #0070cc 100%);
+  z-index: 3;
+}
+
+/* Background Network Pattern */
+.brand-bg-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.brand-route-flow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+}
+
+/* Elevated Route Cards */
+.brand-route-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 12px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 92, 169, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px -2px rgba(0, 92, 169, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+.brand-route-card:hover {
+  transform: scale(1.015);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px -3px rgba(0, 92, 169, 0.15);
+}
+
+.brand-route-card-italy {
+  border-left: 4px solid #009246;
+}
+
+.brand-route-card-europe {
+  border-left: 4px solid #005ca9;
+}
+
+.brand-flag-badge {
+  width: 50px;
+  height: 34px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.brand-flag-badge .flag-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-route-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.brand-route-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: var(--color-text-main);
+}
+
+.brand-route-card-europe .brand-route-title {
+  color: var(--color-primary);
+}
+
+.brand-route-sub {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+/* Directional Route Connector */
+.brand-route-connector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  width: 100%;
+}
+
+.connector-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #009246 0%, #005ca9 100%);
+  opacity: 0.35;
+}
+
+.brand-route-arrow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 1.5px solid rgba(0, 92, 169, 0.22);
+  box-shadow: 0 2px 6px rgba(0, 92, 169, 0.12);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-brand-card:hover .brand-route-arrow {
+  transform: translateY(2px);
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 92, 169, 0.3);
+}
+
+/* Dynamic Brand Speed Stripes */
+.brand-speed-stripes {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 18px 0 14px 0;
+  width: 100%;
+}
+
+.stripe-bar {
+  height: 3px;
+  border-radius: 2px;
+}
+
+.stripe-green { width: 32px; background: #009246; }
+.stripe-white { width: 20px; background: #94a3b8; }
+.stripe-red   { width: 32px; background: #ce2b37; }
+.stripe-blue  { width: 44px; background: #005ca9; }
+
+/* Logo Podium */
+.brand-logo-podium {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 92, 169, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 92, 169, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand-logo-podium:hover {
+  box-shadow: 0 6px 18px rgba(0, 92, 169, 0.14);
+}
+
+.brand-logo-subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.brand-company-logo {
+  height: 46px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.hero-brand-card:hover .brand-company-logo {
+  transform: scale(1.02);
+}
+
+@media (max-width: 640px) {
+  .hero-brand-card {
+    min-height: auto;
+    padding: 28px 16px;
+  }
+  .brand-route-card {
+    padding: 10px 14px;
+    gap: 12px;
+  }
+  .brand-route-title {
+    font-size: 22px;
+  }
+  .brand-route-sub {
+    font-size: 10px;
+  }
+  .brand-flag-badge {
+    width: 40px;
+    height: 28px;
+  }
+  .brand-company-logo {
+    height: 38px;
+  }
 }
 
 /* Respect user preference for reduced motion */
