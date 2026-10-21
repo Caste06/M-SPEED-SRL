@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.getElementById('drawer-close-btn');
   const drawer = document.getElementById('mobile-drawer');
   const overlay = document.getElementById('drawer-overlay');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
 
   function openDrawer() {
     if (drawer && overlay) {
       drawer.classList.add('open');
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
     }
   }
 
@@ -23,12 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.classList.remove('open');
       overlay.classList.remove('open');
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     }
   }
 
   if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
   if (overlay) overlay.addEventListener('click', closeDrawer);
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeDrawer();
@@ -78,14 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Back to top button visibility
-    if (scrollY > 400) {
+    if (scrollY > 350) {
       backToTop.classList.add('visible');
     } else {
       backToTop.classList.remove('visible');
     }
   }, { passive: true });
 
-  // IntersectionObserver for fast scroll reveal animations
+  // IntersectionObserver for fast, flawless scroll reveal animations
   const revealElements = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -97,11 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      rootMargin: '0px 0px -20px 0px',
-      threshold: 0.05
+      rootMargin: '60px 0px 60px 0px',
+      threshold: 0
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Fallback: Ensure no content remains hidden on slow devices or rapid flings
+    setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.revealed)').forEach(el => el.classList.add('revealed'));
+    }, 800);
   } else {
     revealElements.forEach(el => el.classList.add('revealed'));
   }
