@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const serviziSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Trasporto merci su gomma e spedizioni internazionali",
+  "provider": {
+    "@type": "LogisticsService",
+    "name": "M-SPEED SRL",
+    "telephone": "+390733865651",
+    "email": "sales@m-speed.eu",
+    "url": "https://www.m-speed.eu"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Italy" },
+    { "@type": "Country", "name": "Belgium" },
+    { "@type": "Country", "name": "Netherlands" },
+    { "@type": "Country", "name": "Luxembourg" },
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Spain" },
+    { "@type": "Country", "name": "Romania" }
+  ],
+  "description": "Servizi di trasporto stradale per carichi industriali completi e parziali con collegamenti settimanali tra Italia ed Europa."
+};
+---
+
+<Layout
+  title="Servizi di Trasporto | M-SPEED SRL"
+  description="Servizi di trasporto internazionale su gomma tra Italia ed Europa. Soluzioni per merce su bancali e colli industriali con valutazione personalizzata di tratta, peso e dimensioni."
+  keywords="servizi trasporto merci, trasporti internazionali gomma, carichi completi, groupage, trasporto bancali, logistica italia europa, m-speed srl"
+  activePage="servizi"
+  schemaJson={serviziSchema}
+>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>&rsaquo;</span>
+        <span class="breadcrumb-current">Servizi</span>
+      </nav>
+
+      <div class="eyebrow">Trasporti Internazionali Via Terra</div>
+      <h1 class="page-title">Spedizioni per pallet e colli industriali.</h1>
+      <p class="page-desc">
+        M-SPEED SRL organizza collegamenti stradali calibrati sulle reali caratteristiche del carico. Ogni spedizione viene analizzata per volume, peso, tempistiche ed esigenze di movimentazione.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: PALLET -->
+  <section id="pallet" class="section section-white">
+    <div class="container">
+      <div class="split-layout">
+        <div class="text-content reveal">
+          <div class="eyebrow">Servizio Specializzato</div>
+          <h2 class="section-title">Merce su Pallet verso l’Europa.</h2>
+          <p>
+            Trasporti via terra verso le principali destinazioni europee, con scrupolosa attenzione alle caratteristiche della merce, alle dimensioni, al peso e alle modalità di movimentazione.
+          </p>
+          <p>
+            Gestione rigorosa delle merci su pallet standard (Europallet), bancali industriali, lotti fuori misura o sagome personalizzate. Ogni spedizione viene pianificata considerando portata, stivaggio ottimale e requisiti specifici per il carico e lo scarico.
+          </p>
+
+          <div class="checklist">
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Valutazione tecnica:</strong> calcolo scrupoloso di dimensioni, peso lordo e sagoma per saturazione ideale.</div>
+            </div>
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Cadenza settimanale:</strong> partenze costanti dai poli di Montecosaro e Fucecchio verso tutti i mercati chiave europei.</div>
+            </div>
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Interlocutore dedicato:</strong> gestione fluida senza intermediari, con un referente unico a tua disposizione.</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="/contatti/" class="btn btn-primary">
+              <span>Richiedi quotazione pallet</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="tel:0733865651" class="btn btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Tel. 0733 865651</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap reveal reveal-delay-1">
+          <img src="/images/service-pallets.jpg" alt="Merce su pallet pronta per la spedizione internazionale" />
+          <div class="hero-image-caption">
+            <div class="caption-label">Movimentazione Pallet</div>
+            <div class="caption-text">Spedizioni standard e fuori misura per l'Europa con controllo carichi e tempi garantiti.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: COLLI SFUSI -->
+  <section id="colli-sfusi" class="section section-slate">
+    <div class="container">
+      <div class="split-layout">
+        <div class="text-content reveal">
+          <div class="eyebrow">Flessibilità Operativa</div>
+          <h2 class="section-title">Colli Sfusi e Spedizioni Dedicate.</h2>
+          <p>
+            Gestione delle spedizioni in tutta Europa e verso destinazioni extra-UE, con definizione accurata del servizio in base alle peculiarità della singola esigenza aziendale.
+          </p>
+          <p>
+            Soluzioni flessibili per spedizioni che richiedono la gestione di colli eterogenei, pacchi industriali o singoli elementi non pallettizzati. Organizziamo la tratta definendo il veicolo e la rotta ottimali per volume, cubatura e destinazione.
+          </p>
+
+          <div class="checklist">
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Flessibilità totale:</strong> gestione di lotti industriali, pezzi singoli e carichi parziali dedicati.</div>
+            </div>
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Rete capillare:</strong> collegamenti estesi su tutto il territorio continentale ed extra-UE su quotazione.</div>
+            </div>
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Controllo costante:</strong> filo diretto continuo con il referente commerciale e logistico.</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="/contatti/" class="btn btn-primary">
+              <span>Richiedi informazioni colli sfusi</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="tel:057135457" class="btn btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Tel. 0571 35457</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap reveal reveal-delay-1">
+          <img src="/images/service-parcels.jpg" alt="Colli sfusi e pacchi industriali per trasporto internazionale" />
+          <div class="hero-image-caption">
+            <div class="caption-label">Colli Industriali</div>
+            <div class="caption-text">Soluzioni su misura per carichi eterogenei e tratte terrestri dedicate in tutta Europa.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: GUIDA OPERATIVA CRITERI -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">Guida Operativa</div>
+        <h2 class="section-title">Informazioni utili per richiedere una quotazione rapida.</h2>
+        <p class="section-desc">
+          Avere a disposizione questi parametri permette ai nostri uffici commerciali di Montecosaro e Fucecchio di formulare rapidamente una risposta precisa e personalizzata.
+        </p>
+      </div>
+
+      <div class="cards-grid-3">
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Luogo di partenza</span>
+          </div>
+          <p class="card-text">Comune, CAP e provincia di carico in Italia, con eventuali specifiche di accesso per mezzi pesanti.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Destinazione</span>
+          </div>
+          <p class="card-text">Località e nazione europea di scarico per calcolare l'itinerario e la programmazione della rotta.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <span>Numero dei colli</span>
+          </div>
+          <p class="card-text">Quantità esatta di bancali (Europallet, pallet industriali) o numero di colli sfusi da movimentare.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+            <span>Dimensioni e ingombro</span>
+          </div>
+          <p class="card-text">Lunghezza, larghezza e altezza di ciascun elemento per la corretta saturazione del piano di carico.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+            <span>Peso della spedizione</span>
+          </div>
+          <p class="card-text">Peso complessivo lordo indicativo della merce, fondamentale per il rispetto dei carichi stradali.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Tempi desiderati</span>
+          </div>
+          <p class="card-text">Finestra temporale di disponibilità al carico e data o settimana auspicata di consegna a destino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <CtaSection />
+</Layout>

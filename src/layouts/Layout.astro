@@ -1,0 +1,82 @@
+---
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  ogType?: string;
+  ogImage?: string;
+  activePage?: string;
+  schemaJson?: Record<string, any>;
+}
+
+const {
+  title = 'M-SPEED SRL | Trasporti Internazionali su Gomma Italia - Europa',
+  description = 'M-SPEED SRL: trasporti internazionali via terra per merce pallettizzata e colli industriali. Due centri operativi a Montecosaro (MC) e Fucecchio (FI), partenze settimanali verso Belgio e Lussemburgo, Olanda, Germania, Francia, Spagna e Romania con referente dedicato.',
+  keywords = 'trasporti internazionali su gomma, trasporti italia europa, merce su pallet, colli industriali, autotrasporti Montecosaro, logistica Fucecchio, trasporti germania, trasporti francia, trasporti belgio lussemburgo, trasporti olanda paesi bassi, trasporti spagna, trasporti romania, M-SPEED SRL',
+  canonical = Astro.url.href,
+  ogType = 'website',
+  ogImage = '/images/hero-truck-daylight.jpg',
+  activePage = '',
+  schemaJson,
+} = Astro.props;
+
+const resolvedOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site || 'https://www.m-speed.eu').href;
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="M-SPEED SRL" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={resolvedOgImage} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={resolvedOgImage} />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  {schemaJson && (
+    <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
+  )}
+
+  <slot name="head" />
+</head>
+<body>
+  <TopBar />
+  <Header activePage={activePage} />
+  <MobileDrawer activePage={activePage} />
+
+  <slot />
+
+  <Footer />
+
+  <script is:inline src="/js/main.js"></script>
+</body>
+</html>

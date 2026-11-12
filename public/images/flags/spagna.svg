@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" width="100%" height="100%">
+  <rect width="750" height="500" fill="#aa151b"/>
+  <rect width="750" height="250" y="125" fill="#f1bf00"/>
+  <!-- Simplified Coat of arms hint -->
+  <g transform="translate(180, 200) scale(0.65)">
+    <path d="M0,0 h80 v100 a40,40 0 0,1 -80,0 z" fill="#aa151b" stroke="#ffffff" stroke-width="4"/>
+    <rect x="15" y="15" width="50" height="70" fill="#f1bf00"/>
+    <circle cx="40" cy="50" r="18" fill="#002395"/>
+    <!-- Pillars of Hercules -->
+    <rect x="-35" y="-10" width="16" height="130" fill="#cbd5e1" rx="4"/>
+    <rect x="99" y="-10" width="16" height="130" fill="#cbd5e1" rx="4"/>
+  </g>
+</svg>

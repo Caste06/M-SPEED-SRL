@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="100%">
+  <!-- Left Half: Belgium (Black, Yellow, Red vertical stripes) -->
+  <g opacity="0.95">
+    <rect x="0" width="150" height="600" fill="#000000"/>
+    <rect x="150" width="150" height="600" fill="#ffd90c"/>
+    <rect x="300" width="150" height="600" fill="#ed2939"/>
+  </g>
+  <!-- Right Half: Luxembourg (Red, White, Sky Blue horizontal stripes) -->
+  <g opacity="0.95">
+    <rect x="450" y="0" width="450" height="200" fill="#ea141d"/>
+    <rect x="450" y="200" width="450" height="200" fill="#ffffff"/>
+    <rect x="450" y="400" width="450" height="200" fill="#00a1de"/>
+  </g>
+</svg>
+

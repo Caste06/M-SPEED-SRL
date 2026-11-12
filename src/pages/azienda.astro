@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const aziendaSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Chi Siamo - M-SPEED SRL",
+  "url": "https://www.m-speed.eu/azienda/",
+  "mainEntity": {
+    "@type": "LogisticsService",
+    "name": "M-SPEED SRL",
+    "telephone": "+390733865651",
+    "email": "sales@m-speed.eu"
+  }
+};
+---
+
+<Layout
+  title="Azienda | M-SPEED SRL"
+  description="Chi siamo e come operiamo in M-SPEED SRL: modello logistico su gomma, due centri operativi a Montecosaro (MC) e Fucecchio (FI), partenze settimanali e un referente diretto per ogni spedizione."
+  keywords="M-SPEED azienda, chi siamo trasporti, autotrasporti Montecosaro, logistica Fucecchio, trasporti internazionali affidabili"
+  activePage="azienda"
+  schemaJson={aziendaSchema}
+>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>&rsaquo;</span>
+        <span class="breadcrumb-current">Azienda</span>
+      </nav>
+
+      <div class="eyebrow">Chi Siamo e Come Operiamo</div>
+      <h1 class="page-title">Una presenza operativa, una prospettiva europea.</h1>
+      <p class="page-desc">
+        M-SPEED SRL nasce per offrire alle aziende un partner solido e concreto per i trasporti internazionali su gomma, unendo presidio operativo in Italia e collegamenti costanti verso il continente.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: ORGANIZZAZIONE -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="split-layout">
+        <div class="text-content reveal">
+          <div class="eyebrow">La Nostra Organizzazione</div>
+          <h2 class="section-title">Due centri operativi propri per il coordinamento delle merci.</h2>
+          <p>
+            Montecosaro e Fucecchio sono i riferimenti operativi di M-SPEED per la gestione della merce e il coordinamento dei trasporti. Questa duplice presenza consente di presidiare con efficacia sia il versante adriatico e il Centro Italia, sia il polo toscano e le direttrici tirreniche.
+          </p>
+          <p>
+            I nostri centri operano come veri e propri snodi logistici: accogliamo la merce, ne verifichiamo la conformità per il viaggio internazionale, ottimizziamo i carichi e pianifichiamo gli itinerari stradali con partenze settimanali verso le destinazioni europee.
+          </p>
+
+          <div class="checklist">
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Pianificazione rigorosa:</strong> gestione scrupolosa delle finestre di carico e scarico senza sovrapposizioni.</div>
+            </div>
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Monitoraggio del viaggio:</strong> coordinamento operativo interno continuo per garantire regolarità di transito.</div>
+            </div>
+            <div class="checklist-item">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Filo diretto:</strong> nessuna voce automatica: ogni cliente si interfaccia con il proprio referente dedicato.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap reveal reveal-delay-1">
+          <img src="/images/alpine-corridor.jpg" alt="Infrastruttura autostradale per i trasporti internazionali verso l'Europa" />
+          <div class="hero-image-caption">
+            <div class="caption-label">Direttrici Internazionali</div>
+            <div class="caption-text">I corridoi stradali che uniscono l'Italia ai mercati di Belgio e Lussemburgo, Olanda, Germania, Francia, Spagna e Romania.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: I POLI OPERATIVI -->
+  <section class="section section-slate">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">I Poli Operativi</div>
+        <h2 class="section-title">Montecosaro e Fucecchio: presidio e continuità.</h2>
+        <p class="section-desc">
+          Due centri operativi, entrambi nostri, scelti per ottimizzare i flussi merci delle imprese del territorio.
+        </p>
+      </div>
+
+      <div class="cards-grid-2">
+        <!-- Hub MC -->
+        <div class="hub-card reveal reveal-delay-1">
+          <div>
+            <div class="hub-header">
+              <div class="hub-title-group">
+                <div class="hub-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div class="hub-sub">Centro Operativo</div>
+                  <h3 class="hub-name">Montecosaro</h3>
+                </div>
+              </div>
+              <span class="hub-tag">Marche (MC)</span>
+            </div>
+            <div style="margin-top: 16px;">
+              <div class="hub-role">Centro Operativo Adriatico &amp; Centro Italia</div>
+              <p class="hub-desc">
+                Punto di riferimento per la gestione delle merci, l'accorpamento e il coordinamento dei trasporti su strada verso l'Europa.
+              </p>
+              <div style="margin-top: 14px;">
+                <a href="tel:0733865651" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:8px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Ufficio MC: <strong>0733 865651</strong></span>
+                </a>
+              </div>
+            </div>
+            <div class="hub-note">Riferimento per prenotazione e presa in carico merci. Indirizzo confermato alla prenotazione.</div>
+          </div>
+        </div>
+
+        <!-- Hub FI -->
+        <div class="hub-card reveal reveal-delay-2">
+          <div>
+            <div class="hub-header">
+              <div class="hub-title-group">
+                <div class="hub-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div class="hub-sub">Centro Operativo</div>
+                  <h3 class="hub-name">Fucecchio</h3>
+                </div>
+              </div>
+              <span class="hub-tag">Toscana (FI)</span>
+            </div>
+            <div style="margin-top: 16px;">
+              <div class="hub-role">Centro Operativo Tirrenico &amp; Centro-Nord</div>
+              <p class="hub-desc">
+                Piattaforma strategica per il consolidamento merci e la gestione diretta dei collegamenti con le principali direttrici continentali.
+              </p>
+              <div style="margin-top: 14px;">
+                <a href="tel:057135457" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:8px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Ufficio FI: <strong>0571 35457</strong></span>
+                </a>
+              </div>
+            </div>
+            <div class="hub-note">Riferimento per prenotazione e presa in carico merci. Indirizzo confermato alla prenotazione.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: RAPPORTO DIRETTO -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="split-layout">
+        <div class="hero-image-wrap">
+          <img src="/images/direct-contact.jpg" alt="Ufficio commerciale M-Speed per la pianificazione dei trasporti" />
+          <div class="hero-image-caption">
+            <div class="caption-label">Ufficio Commerciale</div>
+            <div class="caption-text">Referente dedicato: 0733 865651 · sales@m-speed.eu</div>
+          </div>
+        </div>
+
+        <div class="text-content">
+          <div class="eyebrow">Il Rapporto Diretto</div>
+          <h2 class="section-title">Un interlocutore dedicato per ciascuna spedizione.</h2>
+          <p>
+            Nella logistica su strada le variazioni di programma richiedono decisioni rapide. Per questo in M-SPEED crediamo nel valore di un interlocutore che conosce a fondo la tua merce, la tratta concordata e le esigenze del destinatario.
+          </p>
+          <p>
+            Dal primo contatto alla consegna, il nostro ufficio commerciale ti supporta con trasparenza, puntualità nelle risposte e disponibilità continuativa.
+          </p>
+          <div style="margin-top: 24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="/contatti/" class="btn btn-primary">
+              <span>Contatta l'ufficio</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="tel:0733865651" class="btn btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Montecosaro: 0733 865651</span>
+            </a>
+            <a href="tel:057135457" class="btn btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Fucecchio: 0571 35457</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <CtaSection />
+</Layout>

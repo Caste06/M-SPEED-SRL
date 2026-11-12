@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const destinazioniSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Collegamenti e Destinazioni Europee",
+  "provider": {
+    "@type": "LogisticsService",
+    "name": "M-SPEED SRL",
+    "telephone": "+390733865651",
+    "email": "sales@m-speed.eu"
+  },
+  "areaServed": ["Belgio", "Lussemburgo", "Paesi Bassi", "Germania", "Francia", "Spagna", "Romania"]
+};
+---
+
+<Layout
+  title="Destinazioni Europee | M-SPEED SRL"
+  description="Collegamenti regolari su strada tra Italia ed Europa con partenze settimanali verso Belgio e Lussemburgo, Olanda, Germania, Francia, Spagna e Romania. Spedizioni su misura verso tutta Europa ed extra-UE da Montecosaro (MC) e Fucecchio (FI)."
+  keywords="tratte trasporti europa, trasporti belgio lussemburgo, trasporti olanda paesi bassi, trasporti germania, trasporti francia, trasporti spagna, trasporti romania, rotte commerciali europa, trasporti internazionali M-SPEED"
+  activePage="destinazioni"
+  schemaJson={destinazioniSchema}
+>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>&rsaquo;</span>
+        <span class="breadcrumb-current">Destinazioni</span>
+      </nav>
+
+      <div class="eyebrow">Rete Europea di Collegamento</div>
+      <h1 class="page-title">Dall’Italia ai mercati europei.</h1>
+      <p class="page-desc">
+        M-SPEED SRL garantisce continuità logistica verso i principali poli industriali e commerciali del continente, coordinando partenze settimanali dai due centri di Montecosaro e Fucecchio.
+      </p>
+    </div>
+  </div>
+
+  <!-- MERCATI DI SPECIALIZZAZIONE -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Mercati di Specializzazione</div>
+        <h2 class="section-title">Le nostre sei direttrici principali</h2>
+        <p class="section-desc">
+          Rotte consolidate con partenze settimanali per merci pallettizzate e colli industriali.
+        </p>
+      </div>
+
+      <div class="cards-grid-2">
+        <!-- Belgio e Lussemburgo -->
+        <div id="belgio-lussemburgo" class="dest-card reveal reveal-delay-1" data-country="belgio-lussemburgo">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name" style="font-size: 24px;">Belgio e Lussemburgo</h3>
+            <div class="dest-countries">Copertura: Belgio · Lussemburgo (Bruxelles, Anversa, Liegi, Gand, Lussemburgo)</div>
+            <p class="dest-desc">
+              Collegamenti regolari dedicati per hub logistici, interporti e aree industriali in Belgio e nel Granducato di Lussemburgo.
+            </p>
+            <div class="card card-slate" style="padding: 14px 16px; margin-bottom: 20px;">
+              <strong style="color:var(--color-text-main); display:block; font-size:12px; margin-bottom:4px;">Organizzazione operativa:</strong>
+              <span style="font-size:13px; color:var(--color-text-body);">Gestione diretta di merce pallettizzata e carichi di colli sfusi con programmazione settimanale.</span>
+            </div>
+          </div>
+          <div class="dest-card-footer" style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; color:var(--color-text-muted);">Snodi: Montecosaro &amp; Fucecchio</span>
+            <a href="/contatti/" class="link-arrow">
+              <span>Contatta l'ufficio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Olanda -->
+        <div id="olanda" class="dest-card reveal reveal-delay-2" data-country="olanda">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name" style="font-size: 24px;">Olanda</h3>
+            <div class="dest-countries">Copertura: Paesi Bassi (Rotterdam, Amsterdam, Eindhoven, Utrecht, Tilburg)</div>
+            <p class="dest-desc">
+              Linea settimanale specifica dedicata ai grandi poli commerciali, terminal portuali e distretti produttivi dei Paesi Bassi.
+            </p>
+            <div class="card card-slate" style="padding: 14px 16px; margin-bottom: 20px;">
+              <strong style="color:var(--color-text-main); display:block; font-size:12px; margin-bottom:4px;">Organizzazione operativa:</strong>
+              <span style="font-size:13px; color:var(--color-text-body);">Partenze settimanali calibrate sulle finestre di scarico dei centri distributivi olandesi.</span>
+            </div>
+          </div>
+          <div class="dest-card-footer" style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; color:var(--color-text-muted);">Snodi: Montecosaro &amp; Fucecchio</span>
+            <a href="/contatti/" class="link-arrow">
+              <span>Contatta l'ufficio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Germania -->
+        <div id="germania" class="dest-card reveal reveal-delay-2" data-country="germania">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name" style="font-size: 24px;">Germania</h3>
+            <div class="dest-countries">Copertura: Germania</div>
+            <p class="dest-desc">
+              Rotte continue verso i principali distretti produttivi e centri di distribuzione tedeschi.
+            </p>
+            <div class="card card-slate" style="padding: 14px 16px; margin-bottom: 20px;">
+              <strong style="color:var(--color-text-main); display:block; font-size:12px; margin-bottom:4px;">Organizzazione operativa:</strong>
+              <span style="font-size:13px; color:var(--color-text-body);">Spedizioni coordinate con partenze fisse settimanali per merci industriali e commerciali.</span>
+            </div>
+          </div>
+          <div class="dest-card-footer" style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; color:var(--color-text-muted);">Snodi: Montecosaro &amp; Fucecchio</span>
+            <a href="/contatti/" class="link-arrow">
+              <span>Contatta l'ufficio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Francia -->
+        <div id="francia" class="dest-card reveal reveal-delay-1" data-country="francia">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name" style="font-size: 24px;">Francia</h3>
+            <div class="dest-countries">Copertura: Francia</div>
+            <p class="dest-desc">
+              Copertura verso le principali regioni francesi e nodi metropolitani di transito.
+            </p>
+            <div class="card card-slate" style="padding: 14px 16px; margin-bottom: 20px;">
+              <strong style="color:var(--color-text-main); display:block; font-size:12px; margin-bottom:4px;">Organizzazione operativa:</strong>
+              <span style="font-size:13px; color:var(--color-text-body);">Servizio mirato per lotti pallettizzati e spedizioni multi-collo.</span>
+            </div>
+          </div>
+          <div class="dest-card-footer" style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; color:var(--color-text-muted);">Snodi: Montecosaro &amp; Fucecchio</span>
+            <a href="/contatti/" class="link-arrow">
+              <span>Contatta l'ufficio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Spagna -->
+        <div id="spagna" class="dest-card reveal reveal-delay-2" data-country="spagna">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name" style="font-size: 24px;">Spagna</h3>
+            <div class="dest-countries">Copertura: Spagna</div>
+            <p class="dest-desc">
+              Direttrici settimanali dedicate verso la penisola iberica e i suoi poli di interscambio.
+            </p>
+            <div class="card card-slate" style="padding: 14px 16px; margin-bottom: 20px;">
+              <strong style="color:var(--color-text-main); display:block; font-size:12px; margin-bottom:4px;">Organizzazione operativa:</strong>
+              <span style="font-size:13px; color:var(--color-text-body);">Organizzazione calibrata sulle esigenze di carico e tempistica richiesta.</span>
+            </div>
+          </div>
+          <div class="dest-card-footer" style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; color:var(--color-text-muted);">Snodi: Montecosaro &amp; Fucecchio</span>
+            <a href="/contatti/" class="link-arrow">
+              <span>Contatta l'ufficio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Romania -->
+        <div id="romania" class="dest-card reveal reveal-delay-1" data-country="romania">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name" style="font-size: 24px;">Romania</h3>
+            <div class="dest-countries">Copertura: Romania (Bucarest, Timișoara, Cluj, distretti industriali)</div>
+            <p class="dest-desc">
+              Collegamenti continuativi per merci pallettizzate e colli industriali verso la Romania e l'Europa orientale.
+            </p>
+            <div class="card card-slate" style="padding: 14px 16px; margin-bottom: 20px;">
+              <strong style="color:var(--color-text-main); display:block; font-size:12px; margin-bottom:4px;">Organizzazione operativa:</strong>
+              <span style="font-size:13px; color:var(--color-text-body);">Pianificazione settimanale mirata con verifica delle finestre di carico e documenti doganali/di transito.</span>
+            </div>
+          </div>
+          <div class="dest-card-footer" style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; color:var(--color-text-muted);">Snodi: Montecosaro &amp; Fucecchio</span>
+            <a href="/contatti/" class="link-arrow">
+              <span>Contatta l'ufficio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COPERTURA ESTESA -->
+  <section class="section section-slate">
+    <div class="container">
+      <div class="card" style="padding: 36px;">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow" style="margin-bottom: 4px;">Copertura Estesa</div>
+          <h2 style="font-size: 24px; font-weight: 800; color: var(--color-text-main); margin-bottom: 8px;">
+            Altre destinazioni europee e collegamenti extra-UE
+          </h2>
+          <p style="font-size: 15px; color: var(--color-text-muted); max-width: 720px;">
+            Le esigenze della tua azienda vanno oltre le sei direttrici principali? M-SPEED SRL valuta la fattibilità operativa e organizza trasporti dedicati verso tutte le principali destinazioni continentali e rotte extra-UE.
+          </p>
+        </div>
+
+        <div class="cards-grid-3">
+          <div class="card card-slate" style="padding: 20px;">
+            <div style="font-size:12px; font-weight:700; color:var(--color-secondary); margin-bottom:4px;">Europa Continentale</div>
+            <h4 style="font-size:15px; font-weight:700; color:var(--color-text-main); margin-bottom:6px;">Valutazione Tratta Singola</h4>
+            <p style="font-size:13px; color:var(--color-text-body); line-height:1.5;">
+              Analisi preliminare dei percorsi, dei tempi di transito e delle disponibilità di carico.
+            </p>
+          </div>
+
+          <div class="card card-slate" style="padding: 20px;">
+            <div style="font-size:12px; font-weight:700; color:var(--color-secondary); margin-bottom:4px;">Destinazioni Extra-UE</div>
+            <h4 style="font-size:15px; font-weight:700; color:var(--color-text-main); margin-bottom:6px;">Coordinamento Specifico</h4>
+            <p style="font-size:13px; color:var(--color-text-body); line-height:1.5;">
+              Definizione del servizio e pianificazione adeguata per il transito e le formalità necessarie.
+            </p>
+          </div>
+
+          <div class="card card-slate" style="padding: 20px;">
+            <div style="font-size:12px; font-weight:700; color:var(--color-secondary); margin-bottom:4px;">Riferimento Unico</div>
+            <h4 style="font-size:15px; font-weight:700; color:var(--color-text-main); margin-bottom:6px;">Filo Diretto Commerciale</h4>
+            <p style="font-size:13px; color:var(--color-text-body); line-height:1.5;">
+              Contatto costante con il team M-SPEED per chiarire ogni dettaglio operativo della consegna.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px;">
+          <a href="/contatti/" class="btn btn-primary">
+            <span>Richiedi valutazione per una destinazione specifica</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <CtaSection />
+</Layout>
