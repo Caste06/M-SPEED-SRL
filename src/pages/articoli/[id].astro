@@ -1,0 +1,143 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articoli');
+  return articles.map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(date));
+}
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  'headline': article.data.title,
+  'description': article.data.description,
+  'datePublished': new Date(article.data.date).toISOString(),
+  'author': {
+    '@type': 'Organization',
+    'name': article.data.author || 'M-SPEED SRL',
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'M-SPEED SRL',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': 'https://www.m-speed.eu/images/logo.png',
+    },
+  },
+  'image': article.data.image ? `https://www.m-speed.eu${article.data.image}` : 'https://www.m-speed.eu/images/hero-truck-daylight.jpg',
+};
+---
+
+<Layout
+  title={`${article.data.title} | M-SPEED SRL`}
+  description={article.data.description}
+  ogType="article"
+  ogImage={article.data.image || '/images/hero-truck-daylight.jpg'}
+  activePage="articoli"
+  schemaJson={articleSchema}
+>
+  <!-- ARTICLE PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>&rsaquo;</span>
+        <a href="/articoli/">Articoli</a>
+        <span>&rsaquo;</span>
+        <span class="breadcrumb-current">{article.data.title}</span>
+      </nav>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;">
+        <span class="news-category-badge">{article.data.category || 'Approfondimento'}</span>
+        <time class="news-date" datetime={new Date(article.data.date).toISOString()}>
+          {formatDate(article.data.date)}
+        </time>
+        <span style="color:var(--color-text-light);">·</span>
+        <span style="font-size:13px; color:var(--color-text-muted); font-weight:600;">
+          {article.data.author || 'M-SPEED SRL'}
+        </span>
+      </div>
+
+      <h1 class="page-title">{article.data.title}</h1>
+      <p class="page-desc">{article.data.description}</p>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY SECTION -->
+  <article class="section section-white">
+    <div class="container">
+      <div class="article-detail-wrap">
+        <div style="margin-bottom:24px;">
+          <a href="/articoli/" class="article-nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Torna all'elenco articoli</span>
+          </a>
+        </div>
+
+        {article.data.image && (
+          <div class="article-hero-img-wrap">
+            <img src={article.data.image} alt={article.data.title} />
+          </div>
+        )}
+
+        <div class="article-body">
+          <Content />
+        </div>
+
+        <div class="article-author-card">
+          <div>
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--color-primary); margin-bottom:4px;">
+              M-SPEED SRL · Logistica Internazionale
+            </div>
+            <div style="font-size:15px; font-weight:700; color:var(--color-text-main);">
+              Due centri operativi a presidio del carico: Montecosaro (MC) e Fucecchio (FI)
+            </div>
+            <div style="font-size:13px; color:var(--color-text-muted); margin-top:4px;">
+              Hai domande su questa tratta o desideri verificare disponibilità settimanale?
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="tel:0733865651" class="btn btn-secondary btn-sm">Montecosaro 0733 865651</a>
+            <a href="tel:057135457" class="btn btn-secondary btn-sm">Fucecchio 0571 35457</a>
+            <a href="/contatti/" class="btn btn-primary btn-sm">Contatta l'ufficio</a>
+          </div>
+        </div>
+
+        <div style="margin-top:36px; padding-top:24px; border-top:1px solid var(--color-border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+          <a href="/articoli/" class="article-nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Torna a tutti gli articoli</span>
+          </a>
+          <a href="/destinazioni/" class="btn btn-outline btn-sm">
+            <span>Scopri tutte le tratte europee &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA SECTION -->
+  <CtaSection />
+</Layout>

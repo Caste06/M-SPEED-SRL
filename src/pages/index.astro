@@ -1,0 +1,681 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articoli');
+const latestArticles = allArticles
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }).format(new Date(date));
+}
+
+const indexSchema = {
+  "@context": "https://schema.org",
+  "@type": "LogisticsService",
+  "name": "M-SPEED SRL",
+  "url": "https://www.m-speed.eu/",
+  "logo": "https://www.m-speed.eu/images/logo.png",
+  "image": "https://www.m-speed.eu/images/hero-truck-daylight.jpg",
+  "description": "Trasporti internazionali via terra per merce pallettizzata e colli sfusi con collegamenti verso i principali mercati europei.",
+  "telephone": "+390733865651",
+  "email": "sales@m-speed.eu",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Italia" },
+    { "@type": "Country", "name": "Germania" },
+    { "@type": "Country", "name": "Francia" },
+    { "@type": "Country", "name": "Spagna" },
+    { "@type": "Country", "name": "Belgio" },
+    { "@type": "Country", "name": "Paesi Bassi" },
+    { "@type": "Country", "name": "Lussemburgo" }
+  ],
+  "serviceType": [
+    "Trasporti internazionali su gomma",
+    "Trasporto merce pallettizzata",
+    "Spedizioni colli industriali"
+  ]
+};
+---
+
+<Layout
+  title="M-SPEED SRL | Trasporti Internazionali su Gomma Italia - Europa"
+  description="M-SPEED SRL: trasporti internazionali via terra per merce pallettizzata e colli industriali. Due centri operativi a Montecosaro (MC) e Fucecchio (FI), partenze settimanali verso Belgio e Lussemburgo, Olanda, Germania, Francia, Spagna e Romania con referente dedicato."
+  keywords="trasporti internazionali su gomma, trasporti italia europa, merce su pallet, colli industriali, autotrasporti Montecosaro, logistica Fucecchio, trasporti germania, trasporti francia, trasporti belgio lussemburgo, trasporti olanda paesi bassi, trasporti spagna, trasporti romania, M-SPEED SRL"
+  activePage="home"
+  schemaJson={indexSchema}
+>
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Content -->
+        <div>
+          <div class="eyebrow">M-SPEED TRASPORTI &amp; SPEDIZIONI</div>
+          <h1 class="hero-title">Trasporti internazionali su gomma: linee dirette dall'Italia all'Europa.</h1>
+          <p class="hero-desc">
+            M-SPEED gestisce la merce e coordina i trasporti internazionali su gomma attraverso le sedi operative di <strong>Montecosaro</strong> e <strong>Fucecchio</strong>. Linee dirette settimanali per merce su pallet e colli sfusi verso Belgio e Lussemburgo, Olanda, Germania, Francia, Spagna e Romania.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="/contatti/" class="btn btn-primary btn-lg">
+              <span>Contatta l'ufficio</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="tel:0733865651" class="btn btn-secondary btn-lg" title="Ufficio Montecosaro">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>MC: 0733 865651</span>
+            </a>
+            <a href="tel:057135457" class="btn btn-secondary btn-lg" title="Ufficio Fucecchio">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>FI: 0571 35457</span>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              <span>Partenze settimanali</span>
+            </div>
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Hub Montecosaro &amp; Fucecchio</span>
+            </div>
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Referente dedicato</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Hero Visual: "From Italy -> to Europe." -->
+        <div class="hero-brand-card reveal reveal-delay-1" role="region" aria-label="M-SPEED: From Italy to Europe">
+          <svg class="brand-bg-pattern" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#005ca9" stop-opacity="0.12"/>
+                <stop offset="50%" stop-color="#0070cc" stop-opacity="0.06"/>
+                <stop offset="100%" stop-color="#2e9e28" stop-opacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <circle cx="80" cy="90" r="3" fill="#009246" fill-opacity="0.5"/>
+            <circle cx="200" cy="50" r="2.5" fill="#005ca9" fill-opacity="0.5"/>
+            <circle cx="320" cy="110" r="3" fill="#005ca9" fill-opacity="0.6"/>
+            <circle cx="120" cy="220" r="2.5" fill="#ce2b37" fill-opacity="0.5"/>
+            <circle cx="290" cy="240" r="3.5" fill="#ffcc00" fill-opacity="0.7"/>
+            <circle cx="200" cy="340" r="3" fill="#005ca9" fill-opacity="0.6"/>
+            <path d="M80 90 L200 50 L320 110 L290 240 L200 340 L120 220 Z" stroke="url(#netGrad)" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <path d="M80 90 L290 240 M200 50 L200 340 M120 220 L320 110" stroke="url(#netGrad)" stroke-width="0.8" stroke-dasharray="2 4"/>
+          </svg>
+
+          <div class="brand-route-flow">
+            <!-- FROM ITALY with Italian Flag -->
+            <div class="brand-route-card brand-route-card-italy">
+              <div class="brand-flag-badge">
+                <img src="/images/flags/italy.svg" alt="Bandiera Italiana" class="flag-icon" />
+              </div>
+              <div class="brand-route-info">
+                <span class="brand-route-title">From Italy</span>
+                <span class="brand-route-sub">Hub Montecosaro · Hub Fucecchio</span>
+              </div>
+            </div>
+
+            <!-- DIRECTIONAL CONNECTOR ARROW -->
+            <div class="brand-route-connector" aria-hidden="true">
+              <div class="connector-track"></div>
+              <div class="brand-route-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <!-- TO EUROPE with European Flag -->
+            <div class="brand-route-card brand-route-card-europe">
+              <div class="brand-flag-badge">
+                <img src="/images/flags/europe.svg" alt="Bandiera Unione Europea" class="flag-icon" />
+              </div>
+              <div class="brand-route-info">
+                <span class="brand-route-title">to Europe.</span>
+                <span class="brand-route-sub">Belgio e Lussemburgo · Olanda · Germania · Francia · Spagna · Romania</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DYNAMIC TRICOLORE & LOGO SPEEDLINE -->
+          <div class="brand-speed-stripes" aria-hidden="true">
+            <span class="stripe-bar stripe-green"></span>
+            <span class="stripe-bar stripe-white"></span>
+            <span class="stripe-bar stripe-red"></span>
+            <span class="stripe-bar stripe-blue"></span>
+          </div>
+
+          <!-- OFFICIAL COMPANY LOGO PODIUM -->
+          <div class="brand-logo-podium">
+            <span class="brand-logo-subtitle">M-SPEED SRL · TRASPORTI &amp; SPEDIZIONI</span>
+            <img src="/images/logo.png" alt="M-SPEED SRL" class="brand-company-logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: POSIZIONAMENTO / LA STRUTTURA -->
+  <section class="section section-slate">
+    <div class="container">
+      <div class="split-layout">
+        <div class="text-content reveal">
+          <div class="eyebrow">La Nostra Struttura</div>
+          <h2 class="section-title">Una presenza sul territorio italiano al servizio dei collegamenti europei.</h2>
+          <p>
+            M-SPEED SRL opera nel settore dei trasporti internazionali su strada con un modello organizzativo concreto,
+            pensato per rispondere con tempestività alle esigenze produttive delle aziende italiane che esportano in
+            Europa.
+          </p>
+          <p>
+            Grazie ai due centri operativi di Montecosaro (Macerata) e Fucecchio (Firenze), coordiniamo la raccolta,
+            l'accorpamento e la partenza delle merci verso le principali destinazioni continentali. Ciascuna spedizione
+            viene seguita direttamente dal nostro ufficio commerciale, garantendo risposte rapide e chiare sui tempi di
+            resa e sullo stato del viaggio.
+          </p>
+          <div style="margin-top: 20px;">
+            <a href="/azienda/" class="link-arrow">
+              <span>Scopri la nostra azienda</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="card reveal reveal-delay-1">
+            <div class="card-icon-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+              <span>Due Centri Operativi Coordinati</span>
+            </div>
+            <p class="card-text">
+              Gli hub di Montecosaro e Fucecchio consentono di presidiare le principali aree industriali del Centro
+              Italia e di organizzare flussi di carico continui.
+            </p>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-icon-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Rapporto Diretto con l'Operatore</span>
+            </div>
+            <p class="card-text">
+              Nessun centralino automatizzato: hai il contatto diretto con i professionisti che organizzano e monitorano
+              il tuo trasporto.
+            </p>
+          </div>
+
+          <div class="card reveal reveal-delay-3">
+            <div class="card-icon-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>Gestione Pallet e Colli Sfusi</span>
+            </div>
+            <p class="card-text">
+              Flessibilità sia per la merce standardizzata su bancale che per carichi non convenzionali, con la massima
+              cura dell'integrità del materiale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: I SERVIZI -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">I Nostri Servizi</div>
+        <h2 class="section-title">Trasporti per merce su bancali e colli industriali.</h2>
+        <p class="section-desc">
+          Organizziamo carichi completi, parziali e groupage via terra, pianificando ciascuna spedizione in base al
+          volume, al peso e alle particolarità della merce.
+        </p>
+      </div>
+
+      <div class="cards-grid-2">
+        <!-- Service 1: Pallet -->
+        <div class="service-card">
+          <img src="/images/service-pallets.jpg" alt="Merce su bancali e pallet" class="service-card-img" />
+          <div class="service-card-body">
+            <div>
+              <h3 class="service-title">Merce Pallettizzata</h3>
+              <p class="service-desc">
+                Trasporti via terra verso le principali destinazioni europee, con attenzione alle caratteristiche della
+                merce, alle dimensioni, al peso e alle modalità di movimentazione.
+              </p>
+              <div class="service-list">
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Valutazione accurata di dimensioni, peso e sagoma</span>
+                </div>
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Partenze settimanali sui mercati chiave europei</span>
+                </div>
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Pianificazione della movimentazione e carico</span>
+                </div>
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Referente commerciale e operativo unico</span>
+                </div>
+              </div>
+            </div>
+            <div class="service-card-footer">
+              <a href="/servizi/#pallet" class="link-arrow">
+                <span>Dettagli del servizio</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="/contatti/" class="btn btn-secondary btn-sm">Contatta l'ufficio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Colli Sfusi -->
+        <div class="service-card">
+          <img src="/images/service-parcels.jpg" alt="Colli sfusi e scatole imballate" class="service-card-img" />
+          <div class="service-card-body">
+            <div>
+              <h3 class="service-title">Colli Sfusi</h3>
+              <p class="service-desc">
+                Gestione delle spedizioni in tutta Europa e verso destinazioni extra-UE, con definizione del servizio in
+                base alla singola esigenza.
+              </p>
+              <div class="service-list">
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Flessibilità su lotti non standard e colli sfusi</span>
+                </div>
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Collegamenti estesi a tutta Europa e direttrici extra-UE</span>
+                </div>
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Definizione del servizio su misura per la spedizione</span>
+                </div>
+                <div class="service-list-item">
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Controllo costante con filo diretto con il referente</span>
+                </div>
+              </div>
+            </div>
+            <div class="service-card-footer">
+              <a href="/servizi/#colli-sfusi" class="link-arrow">
+                <span>Dettagli del servizio</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="/contatti/" class="btn btn-secondary btn-sm">Contatta l'ufficio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DESTINAZIONI -->
+  <section class="section section-slate">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Direttrici Internazionali</div>
+        <h2 class="section-title">Collegamenti settimanali tra Italia ed Europa.</h2>
+        <p class="section-desc">
+          Garantiamo partenze regolari a cadenza settimanale verso i principali mercati continentali, con percorsi
+          pianificati per garantire puntualità e affidabilità.
+        </p>
+      </div>
+
+      <div class="cards-grid-6">
+        <!-- Belgio e Lussemburgo -->
+        <div class="dest-card reveal reveal-delay-1" data-country="belgio-lussemburgo" id="belgio-lussemburgo">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name">Belgio e Lussemburgo</h3>
+            <div class="dest-countries">Belgio · Lussemburgo</div>
+            <p class="dest-desc">Collegamenti regolari dedicati per hub logistici, porti e aree industriali in Belgio e Lussemburgo.</p>
+          </div>
+          <div class="dest-card-footer">
+            <a href="/destinazioni/#belgio-lussemburgo" class="link-arrow">
+              <span>Dettagli tratta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Olanda -->
+        <div class="dest-card reveal reveal-delay-2" data-country="olanda" id="olanda">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name">Olanda</h3>
+            <div class="dest-countries">Paesi Bassi</div>
+            <p class="dest-desc">Linea settimanale diretta verso i principali interporti, terminal e centri distributivi olandesi.</p>
+          </div>
+          <div class="dest-card-footer">
+            <a href="/destinazioni/#olanda" class="link-arrow">
+              <span>Dettagli tratta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Germania -->
+        <div class="dest-card reveal reveal-delay-2" data-country="germania" id="germania">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name">Germania</h3>
+            <div class="dest-countries">Germania</div>
+            <p class="dest-desc">Rotte continue verso i principali distretti produttivi e centri di distribuzione tedeschi.</p>
+          </div>
+          <div class="dest-card-footer">
+            <a href="/destinazioni/#germania" class="link-arrow">
+              <span>Dettagli tratta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Francia -->
+        <div class="dest-card reveal reveal-delay-3" data-country="francia" id="francia">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name">Francia</h3>
+            <div class="dest-countries">Francia</div>
+            <p class="dest-desc">Copertura verso le principali regioni francesi e nodi metropolitani di transito.</p>
+          </div>
+          <div class="dest-card-footer">
+            <a href="/destinazioni/#francia" class="link-arrow">
+              <span>Dettagli tratta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Spagna -->
+        <div class="dest-card reveal reveal-delay-4" data-country="spagna" id="spagna">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name">Spagna</h3>
+            <div class="dest-countries">Spagna</div>
+            <p class="dest-desc">Direttrici settimanali dedicate verso la penisola iberica e i suoi poli di interscambio.</p>
+          </div>
+          <div class="dest-card-footer">
+            <a href="/destinazioni/#spagna" class="link-arrow">
+              <span>Dettagli tratta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Romania -->
+        <div class="dest-card reveal reveal-delay-1" data-country="romania" id="romania">
+          <div class="dest-card-inner">
+            <div class="dest-badge">Partenze Settimanali</div>
+            <h3 class="dest-name">Romania</h3>
+            <div class="dest-countries">Romania</div>
+            <p class="dest-desc">Linea diretta settimanale per i principali distretti industriali e hub logistici romeni.</p>
+          </div>
+          <div class="dest-card-footer">
+            <a href="/destinazioni/#romania" class="link-arrow">
+              <span>Dettagli tratta</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner altre destinazioni -->
+      <div class="banner-card">
+        <div>
+          <h4 class="banner-title">Copriamo anche altre destinazioni europee ed extra-UE</h4>
+          <p class="banner-text">
+            Oltre alle linee continuative con Belgio e Lussemburgo, Olanda, Germania, Francia, Spagna e Romania, organizziamo spedizioni su
+            misura verso altri paesi europei ed extra-comunitari in base alla tipologia di merce e ai tempi richiesti.
+          </p>
+        </div>
+        <a href="/contatti/" class="btn btn-primary btn-sm" style="flex-shrink:0;">
+          <span>Verifica disponibilità tratta</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: METODO DI LAVORO -->
+  <section class="section section-slate">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Il Metodo di Lavoro</div>
+        <h2 class="section-title">Tre fasi chiare per la tua spedizione.</h2>
+        <p class="section-desc">
+          Dalla prima richiesta telefonica o via email fino alla consegna a destino, garantiamo trasparenza e contatto costante.
+        </p>
+      </div>
+
+      <div class="cards-grid-3">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div>
+            <div class="step-top">
+              <span class="step-num">01</span>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </div>
+            </div>
+            <div style="margin-top: 14px;">
+              <h3 class="step-title">Ascolto</h3>
+              <div class="step-tagline">“Partiamo da merce, tratta e necessità operative.”</div>
+              <p class="step-desc">
+                Analizziamo tipologia, dimensioni, peso, luoghi di presa e consegna e vincoli temporali per individuare la soluzione più efficace.
+              </p>
+            </div>
+          </div>
+          <div class="step-footer">Fase 1 · Presidio M-SPEED</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div>
+            <div class="step-top">
+              <span class="step-num">02</span>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="6" cy="19" r="3"></circle>
+                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path>
+                  <circle cx="18" cy="5" r="3"></circle>
+                </svg>
+              </div>
+            </div>
+            <div style="margin-top: 14px;">
+              <h3 class="step-title">Organizzazione</h3>
+              <div class="step-tagline">“Definiamo il servizio e coordiniamo il trasporto.”</div>
+              <p class="step-desc">
+                I nostri centri di Montecosaro e Fucecchio gestiscono il flusso logistico e pianificano la tratta su strada più adatta alla merce.
+              </p>
+            </div>
+          </div>
+          <div class="step-footer">Fase 2 · Presidio M-SPEED</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div>
+            <div class="step-top">
+              <span class="step-num">03</span>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <polyline points="17 11 19 13 23 9"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div style="margin-top: 14px;">
+              <h3 class="step-title">Contatto diretto</h3>
+              <div class="step-tagline">“Un riferimento continuo per il monitoraggio.”</div>
+              <p class="step-desc">
+                Nessun call center o ticket impersonale: parli direttamente con il referente incaricato di monitorare la tua spedizione.
+              </p>
+            </div>
+          </div>
+          <div class="step-footer">Fase 3 · Presidio M-SPEED</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ULTIME NOTIZIE E ARTICOLI PER I CLIENTI -->
+  <section class="section section-white">
+    <div class="container">
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:36px;">
+        <div style="max-width:660px;">
+          <div class="eyebrow">Articoli &amp; Approfondimenti Operativi</div>
+          <h2 class="section-title" style="margin-bottom:8px;">Aggiornamenti operativi, tratte e logistica.</h2>
+          <p class="section-desc" style="margin-bottom:0;">
+            Informazioni utili per le aziende clienti sulle nostre direttrici europee, programmazioni di partenza e preparazione dei carichi.
+          </p>
+        </div>
+        <a href="/articoli/" class="btn btn-secondary">
+          <span>Tutti gli articoli e avvisi</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="cards-grid-3">
+        {latestArticles.map((article, index) => (
+          <article class={`news-card reveal reveal-delay-${(index % 3) + 1}`}>
+            <div>
+              <div class="news-card-thumb">
+                <a href={`/articoli/${article.id}/`} aria-label={article.data.title}>
+                  <img src={article.data.image || '/images/hero-truck-daylight.jpg'} alt={article.data.title} />
+                </a>
+              </div>
+              <div class="news-card-body">
+                <div class="news-meta-row">
+                  <span class="news-category-badge">{article.data.category || 'Approfondimento'}</span>
+                  <span class="news-date">{formatDate(article.data.date)}</span>
+                </div>
+                <h3 class="news-card-title">
+                  <a href={`/articoli/${article.id}/`} style="color:inherit; text-decoration:none;">
+                    {article.data.title}
+                  </a>
+                </h3>
+                <p class="news-card-excerpt">
+                  {article.data.description}
+                </p>
+              </div>
+            </div>
+            <div class="news-card-footer">
+              <span style="font-size:12px; color:var(--color-text-muted);">
+                {article.data.author || 'M-SPEED SRL'}
+              </span>
+              <a href={`/articoli/${article.id}/`} class="news-read-btn">
+                <span>Leggi articolo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <CtaSection />
+</Layout>
